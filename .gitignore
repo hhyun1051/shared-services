@@ -1,0 +1,10 @@
+.env
+langfuse/POSTGRES_MIGRATION.md
+
+# Home Assistant - 민감한 데이터 및 런타임 파일
+home-assistant/config/
+home-assistant/**/*.db
+home-assistant/**/*.db-shm
+home-assistant/**/*.db-wal
+home-assistant/**/*.log
+home-assistant/**/*.log.*

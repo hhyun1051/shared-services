@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  home-assistant:
+    container_name: home-assistant
+    image: ghcr.io/home-assistant/home-assistant:stable
+    network_mode: host
+    volumes:
+      - ./config:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+    restart: unless-stopped
+    privileged: true
+    environment:
+      - TZ=Asia/Seoul
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+# Home Assistant 접속 정보:
+# - URL: http://localhost:8124
+# - 초기 설정: 웹 UI에서 사용자 계정 생성
+# - SmartThings Integration: Settings → Devices & Services → Add Integration → SmartThings
+#
+# 주의: network_mode: host 제거 (ClickHouse 포트 충돌)
