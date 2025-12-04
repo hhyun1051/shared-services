@@ -8,3 +8,5 @@ home-assistant/**/*.db-shm
 home-assistant/**/*.db-wal
 home-assistant/**/*.log
 home-assistant/**/*.log.*
+
+win11/*
